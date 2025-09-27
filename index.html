@@ -32,11 +32,17 @@
     .small{font-size:13px;color:var(--muted)}
 
     .startup-identity ul{list-style:disc inside; margin-top:10px}
-    .startup-identity img{margin-top:10px; width:120px}
+    .startup-identity img{margin-top:10px}
     .startup-identity a{color:var(--accent)}
+
+    .social-icons{display:flex; gap:15px; margin-top:12px}
+    .social-icons a img{width:32px; height:32px; border-radius:50%; background:#fff; padding:4px}
 
     .services-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--gap)}
     .service-card{background:var(--glass); padding:22px;border-radius:var(--radius); border:1px solid rgba(255,255,255,0.03)}
+
+    .products{margin-top:24px}
+    .product-card{background:var(--glass); padding:20px; border-radius:var(--radius); margin-bottom:20px}
 
     .projects, .clients, .next-steps{margin-top:24px}
     .next-steps ul{list-style:disc inside}
@@ -60,6 +66,7 @@
         <nav aria-label="Main navigation">
           <a href="#identity">Identity</a>
           <a href="#services">Services</a>
+          <a href="#products">Products</a>
           <a href="#projects">Projects</a>
           <a href="#contact" class="cta">Contact</a>
         </nav>
@@ -71,14 +78,19 @@
 
     <section id="identity" class="startup-identity">
       <h2>🚀 Startup Company Profile – Let’s Build It Strong!</h2>
-      <p>This week, bring your startup identity to life with:</p>
+      <p>Bring your startup identity to life with:</p>
       <ul>
         <li>Email: <a href="mailto:contact@yourstartup.com">contact@yourstartup.com</a></li>
         <li>Company Name: Your Startup Name</li>
-        <li>Logo & Tagline: <img src="logo.png" alt="Company Logo"><br><em>Your tagline here</em></li>
-        <li>Active Social Media: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a> | <a href="#">X</a> | <a href="#">YouTube</a></li>
-        <li>Company Website showcasing Vision, Mission, Objectives, Values, Team, Services, Projects, Products, Clients</li>
+        <li>Logo & Tagline: <img src="logo.png" alt="Company Logo" width="120"><br><em>Your tagline here</em></li>
       </ul>
+      <div class="social-icons">
+        <a href="https://facebook.com/dummy" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></a>
+        <a href="https://instagram.com/dummy" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></a>
+        <a href="https://linkedin.com/dummy" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></a>
+        <a href="https://x.com/dummy" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></a>
+        <a href="https://youtube.com/dummy" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"></a>
+      </div>
     </section>
 
     <section id="services">
@@ -93,6 +105,13 @@
         <div class="service-card">Web Designing</div>
         <div class="service-card">DPR Preparation</div>
       </div>
+    </section>
+
+    <section id="products" class="products">
+      <h2>Our Products</h2>
+      <div class="product-card">SEO Toolkit — Optimize your business visibility</div>
+      <div class="product-card">Social Scheduler — Automate social campaigns</div>
+      <div class="product-card">Analytics Dashboard — Track KPIs and ROI</div>
     </section>
 
     <section id="projects" class="projects">

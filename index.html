@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BrightWave — Digital Marketing Agency</title>
+  <meta name="description" content="Full-service digital marketing agency: SEO, PPC, Content, Social Media, Design, Analytics and Growth strategy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#06b6d4; /* teal */
+      --accent-2:#7c3aed; /* violet */
+      --glass: rgba(255,255,255,0.04);
+      --radius:12px;
+      --container:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#071024 0%, #07141f 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:64px;
+    }
+    .wrap{max-width:var(--container);margin:0 auto;padding:40px 20px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#021026}
+    .brand h1{font-size:18px;margin:0}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 14px;border-radius:9px;color:#021026;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:34px;align-items:center;padding:36px 0}
+    .hero .eyebrow{color:var(--accent);font-weight:700;margin-bottom:8px}
+    .hero h2{font-size:38px;line-height:1.03;margin:0 0 14px}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .hero .actions{display:flex;gap:12px}
+    .btn{background:var(--accent);border:none;padding:12px 16px;border-radius:10px;font-weight:700;color:#021026;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:22px;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,0.6)}
+    .metric{display:flex;justify-content:space-between;gap:8px}
+    .metric dt{font-size:12px;color:var(--muted)}
+    .metric dd{font-size:18px;font-weight:700;margin:0}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+    .service{background:var(--glass);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .service h3{margin:0 0 8px}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Case studies */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .case-hero{height:160px;border-radius:10px;background:linear-gradient(120deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:22px;color:#021026;font-weight:800}
+
+    /* Pricing */
+    .pricing{display:flex;gap:18px;margin:28px 0}
+    .plan{flex:1;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .plan h4{margin:0 0 6px}
+    .price{font-size:24px;font-weight:800;margin:6px 0}
+    .feature-list{list-style:none;padding:0;margin:10px 0 0}
+    .feature-list li{padding:8px 0;border-top:1px dashed rgba(255,255,255,0.03);color:var(--muted);font-size:14px}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0}
+    .quote{padding:18px;border-radius:12px;background:rgba(255,255,255,0.02);color:var(--muted)}
+    .quote p{margin:0 0 10px}
+    .author{font-weight:700;color:#fff}
+
+    /* Blog */
+    .blog{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0}
+    .post{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .post h5{margin:0 0 8px}
+    .post p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 360px;gap:18px;margin:26px 0}
+    form{background:var(--card);padding:18px;border-radius:12px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:none;background:rgba(255,255,255,0.02);color:#eaf5ff;margin-bottom:10px}
+    textarea{min-height:120px}
+    .foot{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+
+    /* Footer */
+    footer{margin-top:40px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid-2{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .testimonials{grid-template-columns:repeat(2,1fr)}
+      .blog{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+      .pricing{flex-direction:column}
+    }
+    @media (max-width:540px){
+      .services{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+      .brand h1{font-size:16px}
+      .hero h2{font-size:26px}
+    }
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">BW</div>
+        <div>
+          <h1>BrightWave</h1>
+          <div class="muted" style="font-size:13px">Performance-driven digital marketing</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#blog">Blog</a>
+        <a class="cta" href="#contact">Get a Proposal</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Full-funnel marketing • Growth experiments</div>
+        <h2>We turn traffic into predictable revenue — SEO, Ads, Content & Product-led growth.</h2>
+        <p>BrightWave creates measurable growth systems for B2B and B2C brands. We combine data engineering, creative copy, and rigorous experimentation to scale acquisition and reduce CAC.</p>
+        <div class="actions">
+          <button class="btn">Request proposal</button>
+          <button class="btn secondary">See case studies</button>
+        </div>
+
+        <div style="margin-top:20px">
+          <h4 style="margin:0 0 10px">What we do</h4>
+          <div class="services" id="services">
+            <div class="service">
+              <h3>SEO & Content</h3>
+              <p>Keyword strategy, technical SEO fixes, long-form content and topical authority to drive organic leads.</p>
+            </div>
+            <div class="service">
+              <h3>Paid Media (PPC)</h3>
+              <p>Google Ads, Meta, LinkedIn campaigns and conversion optimization to lower CAC and search for scale.</p>
+            </div>
+            <div class="service">
+              <h3>Growth & Analytics</h3>
+              <p>Experimentation, funnel analysis, attribution and dashboards so you know what works and what doesn't.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div>
+            <div style="font-size:13px;color:var(--muted)">Avg. client ROI</div>
+            <div style="font-size:26px;font-weight:800">6.2x</div>
+          </div>
+          <div>
+            <div style="font-size:13px;color:var(--muted)">Avg. CAC reduction</div>
+            <div style="font-size:26px;font-weight:800">38%</div>
+          </div>
+        </div>
+
+        <dl class="metric">
+          <div>
+            <dt>Channels</dt>
+            <dd>SEO • PPC • Social • Email</dd>
+          </div>
+          <div>
+            <dt>Industries</dt>
+            <dd>SaaS • eCommerce • HealthTech • FinTech</dd>
+          </div>
+        </dl>
+
+        <div style="margin-top:14px;font-size:13px;color:var(--muted)">We combine creative assets with event-level tracking and server-side analytics to close the loop on acquisition and retention.</div>
+      </aside>
+    </section>
+
+    <section id="case-studies">
+      <h3 style="margin:0 0 12px">Case studies</h3>
+      <div class="grid-2">
+        <div class="card">
+          <div class="case-hero">SaaS • Organic Growth</div>
+          <h4 style="margin:12px 0 6px">How we grew signups 4x in 9 months</h4>
+          <p class="muted">Situation: High churn, low organic traffic. Strategy: Technical SEO + content clusters + onboarding funnel experiments. Results: 4x MQLs, 33% lower CAC, sustained 40% QoQ growth.</p>
+        </div>
+        <div class="card">
+          <div class="case-hero">eCommerce • Paid Media</div>
+          <h4 style="margin:12px 0 6px">Scaling profitable ROAS with creative testing</h4>
+          <p class="muted">Situation: Strong catalog, low profitability. Strategy: Creative A/B tests, bid strategies, and audience narrowing. Results: 3.8x ROAS and +55% conversion rate on top funnels.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services-more">
+      <h3 style="margin:18px 0">Services deep-dive</h3>
+      <div class="grid-2">
+        <div class="card">
+          <h4>SEO & Content Playbook</h4>
+          <ul style="margin:8px 0 0;color:var(--muted)">
+            <li>Content audits & gap analysis</li>
+            <li>Topical cluster plans & editorial calendar</li>
+            <li>Technical SEO (core web vitals, internal linking, canonicalization)</li>
+            <li>Backlink outreach & relationship building</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Paid Advertising & Creative</h4>
+          <ul style="margin:8px 0 0;color:var(--muted)">
+            <li>Funnel-aligned creative and copy</li>
+            <li>Audience segmentation & lookalikes</li>
+            <li>Always-on experiments and budget pacing</li>
+            <li>Performance reporting and optimization cadence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h3 style="margin:18px 0">Pricing & Packages</h3>
+      <div class="pricing">
+        <div class="plan">
+          <h4>Starter</h4>
+          <div class="price">$1,500/mo</div>
+          <div class="muted">Best for early-stage startups testing channels</div>
+          <ul class="feature-list">
+            <li>Basic SEO health check</li>
+            <li>1 paid channel management</li>
+            <li>Monthly reporting</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <h4>Growth</h4>
+          <div class="price">$5,000/mo</div>
+          <div class="muted">Cross-channel growth for scaling companies</div>
+          <ul class="feature-list">
+            <li>Full SEO & Content</li>
+            <li>2-3 paid channels + creative</li>
+            <li>Bi-weekly optimizations & experiments</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <h4>Enterprise</h4>
+          <div class="price">Custom</div>
+          <div class="muted">For complex businesses and long-term partnerships</div>
+          <ul class="feature-list">
+            <li>Dedicated strategist</li>
+            <li>Advanced analytics & BI</li>
+            <li>Custom SLAs and integrations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 style="margin:18px 0">What our clients say</h3>
+      <div class="testimonials">
+        <div class="quote">
+          <p>"BrightWave helped us cut CAC and scale MQLs in under 6 months. Their team is data-first and creative."</p>
+          <div class="author">— Maya R., VP Marketing</div>
+        </div>
+        <div class="quote">
+          <p>"The content strategy paid for itself within 3 months. Traffic + better-qualified leads."</p>
+          <div class="author">— Alex P., Founder</div>
+        </div>
+        <div class="quote">
+          <p>"They integrated our analytics stack and we finally understand which channels truly move revenue."</p>
+          <div class="author">— Noah K., Head of Growth</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <h3 style="margin:18px 0">From the blog</h3>
+      <div class="blog">
+        <article class="post">
+          <h5>How to build content clusters that rank in 2025</h5>
+          <p class="muted">Step-by-step guide for keyword mapping, pillar pages, and internal linking to build topical authority.</p>
+        </article>
+        <article class="post">
+          <h5>Creative testing frameworks for Facebook & TikTok</h5>
+          <p class="muted">A/B structures, statistical power, and what to stop testing right now.</p>
+        </article>
+        <article class="post">
+          <h5>Server-side tracking: when to migrate and why it matters</h5>
+          <p class="muted">Why server events reduce data loss and how to get started with privacy-first analytics.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <h3>Start a project</h3>
+        <p class="muted">Tell us about your goals and we'll send a tailored proposal with timeline and expected outcomes.</p>
+
+        <form>
+          <label for="name">Full name</label>
+          <input id="name" name="name" placeholder="Jane Doe">
+
+          <label for="company">Company</label>
+          <input id="company" name="company" placeholder="Acme, Inc">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" placeholder="you@company.com">
+
+          <label for="budget">Monthly budget</label>
+          <select id="budget">
+            <option>&lt;$2k</option>
+            <option>$2k–$5k</option>
+            <option>$5k–$15k</option>
+            <option>$15k+</option>
+          </select>
+
+          <label for="message">Project brief</label>
+          <textarea id="message" name="message" placeholder="Short summary of goal, challenges and timeline"></textarea>
+
+          <button type="button" class="btn">Send request</button>
+        </form>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4>Quick audit</h4>
+          <p class="muted">Not sure where to start? We offer a one-page audit that identifies the top 5 growth opportunities.</p>
+          <div style="margin-top:12px"><span class="tag">Free</span></div>
+        </div>
+
+        <div style="margin-top:14px" class="card">
+          <h4>Contact</h4>
+          <p class="muted">hello@brightwave.example • +1 (555) 123-4567</p>
+          <p class="muted">123 Market St, Suite 200, San Francisco, CA</p>
+        </div>
+      </aside>
+    </section>
+
+    <div class="foot">
+      <div>© <strong>BrightWave</strong> — Data-driven digital marketing</div>
+      <div class="muted">Privacy • Terms • Sitemap</div>
+    </div>
+
+    <footer>
+      <p class="muted" style="margin-top:12px">Built for GitHub Pages — save this file as <code>index.html</code> at the root of your <code>username.github.io</code> repository.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -41,12 +41,17 @@
   /* Services Section */
   .services-wrapper {
     position: relative;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    overflow: hidden;
   }
   
   .services-wrapper img {
     width: 100%;
-    border-radius: var(--radius);
+    height: auto; /* responsive image */
     display: block;
+    border-radius: var(--radius);
   }
   
   .services-overlay {
@@ -55,25 +60,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
   }
   
   .services-flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
+    max-width: 90%;
   }
   
   .pill {
     display: inline-block;
-    background: rgba(0,0,0,0.6);
-    padding: 10px 20px;
-    border-radius: 25px;
+    background: rgba(0,0,0,0.55); /* semi-transparent overlay */
+    padding: 8px 14px;
+    border-radius: 20px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
     color: #fff;
     text-align: center;
-    min-width: 140px;
+    font-size: 0.95rem;
+    min-width: 120px;
   }
   
   /* Contact Section */
@@ -125,15 +133,30 @@
       max-height: 250px;
     }
   
+    .services-wrapper img {
+      max-height: 400px;
+      object-fit: cover;
+    }
+  
     .services-overlay {
-      padding: 30px 10px;
+      padding: 20px 10px;
       height: auto;
+    }
+  
+    .services-flex {
+      gap: 8px;
     }
   
     .pill {
       min-width: 100px;
       width: 48%;
+      font-size: 0.85rem;
+      padding: 6px 10px;
       margin-bottom: 10px;
+    }
+  
+    .pill:last-child {
+      width: 100%; /* last pill full width */
     }
   
     .members-flex {

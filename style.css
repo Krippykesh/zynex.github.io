@@ -78,7 +78,7 @@
     padding: 8px 14px;
     border-radius: 20px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
-    color: #fff;
+    color: var(--text-main);
     text-align: center;
     font-size: 0.95rem;
     min-width: 120px;
@@ -128,7 +128,7 @@
   }
   
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (max-width: 360px) {
     .about-img {
       max-height: 250px;
     }
